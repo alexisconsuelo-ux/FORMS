@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+    .error { border: 2px solid red; }
+  </style>
+</head>
+<body>
+    <form>
+    <h2>Registration Form</h2>
+    <label for="username">Username:</label>
+    <input type="text" name="username" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email">
+
+    <script>
+        $("#toggle").click(function(){
+        let pwd = $("#pwd");
+        pwd.attr("type", pwd.attr("type") === "password" ? "text" : "password");
+      });  
+    </script>
+    
+
+    <label for="pwd">Password:</label>
+    <input type="password" id="password" name="password">
+    <button type="button" id="toggle">Show/Hide</button>
+    </form><br>
+    <label for="pass">Comfirm Password:</label>
+    <input type="password" name="confirm_password" required>
+
+    <form>
+    <p>Gender:</p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female"> 
+    <label for="female">Female</label>
+
+    <p>Interests:</p>
+    <input type="checkbox" id="html" name="interest" value="HTML">
+    <label for="html">HTML</label> 
+    <input type="checkbox" id="css" name="interest" value="CSS">
+    <label for="css">CSS</label><br>
+
+    <label for="bio">Message:</label><br>
+    <textarea id="bio" maxlength="100"></textarea>
+    <p id="count">0/100</p>
+  <script>
+    const bio = document.getElementById("bio");
+    const count = document.getElementById("count");
+    bio.addEventListener("input", function()){
+        count.textContent = bio.value.length + "/100";
+    };
+  </script>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
